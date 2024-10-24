@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>우산 대여 등록</title>
+</head>
+<body>
+    <h1>우산 대여 등록</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>
