@@ -121,6 +121,11 @@ LOGGING = {
     },
 }
 
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # 프로젝트 폴더 내에 static 폴더가 있어야 함
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

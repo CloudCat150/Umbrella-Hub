@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대여 확인</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  <!-- CSS 파일 연결 -->
 </head>
 <body>
-    <h1>대여 확인</h1>
-    <p>이름: {{ rental.name }}</p>
-    <p>반: {{ rental.class_number }}</p>
-    <p>번호: {{ rental.student_number }}</p>
-    <p>반납일: {{ rental.return_date }}</p>
+    <div class="container">
+        <h1>대여 확인</h1>
+        <p>이름: {{ rental.name }}</p>
+        <p>반: {{ rental.class_number }}</p>
+        <p>번호: {{ rental.student_number }}</p>
+        <p>전화번호: {{ rental.phone_number }}</p>
+        <p>반납일: {{ rental.return_date }}</p>
+    </div>
 </body>
 </html>

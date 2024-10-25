@@ -4,14 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우산 대여 등록</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  <!-- CSS 파일 연결 -->
 </head>
 <body>
-    <h1>우산 대여 등록</h1>
+    <div class="container">
+        <h1>우산 대여 등록</h1>
 
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">등록</button>
-    </form>
+        <form method="POST" id="rentalForm">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                {{ form.name }}  <!-- 이름 입력 상자 -->
+            </div>
+            <div class="form-group">
+                <label for="{{ form.grade.id_for_label }}">{{ form.grade.label }}</label>
+                {{ form.grade }}  <!-- 학년 입력 상자 -->
+            </div>
+            <div class="form-group">
+                <label for="{{ form.class_number.id_for_label }}">{{ form.class_number.label }}</label>
+                {{ form.class_number }}  <!-- 반 입력 상자 -->
+            </div>
+            <div class="form-group">
+                <label for="{{ form.student_number.id_for_label }}">{{ form.student_number.label }}</label>
+                {{ form.student_number }}  <!-- 학번 입력 상자 -->
+            </div>
+            <div class="form-group">
+                <label for="{{ form.phone_number.id_for_label }}">{{ form.phone_number.label }}</label>
+                {{ form.phone_number }}  <!-- 전화번호 입력 상자 -->
+            </div>
+            <button type="submit">등록</button>
+        </form>
+    </div>
 </body>
 </html>
