@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대여 목록</title>
+</head>
+<body>
+    <h1>대여 목록</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>학년</th>
+                <th>반</th>
+                <th>학번</th>
+                <th>전화번호</th>
+                <th>대여일</th>
+                <th>반납일</th>
+                <th>액션</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rental in rentals %}
+            <tr>
+                <td>{{ rental.name }}</td>
+                <td>{{ rental.grade }}</td>
+                <td>{{ rental.class_number }}</td>
+                <td>{{ rental.student_number }}</td>
+                <td>{{ rental.phone_number }}</td>
+                <td>{{ rental.rented_at }}</td>
+                <td>{{ rental.return_date }}</td>
+                <td>
+                    <form action="{% url 'mark-as-returned' rental.id %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">반납</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RentalForm
 from .models import Rental
 from django.contrib import messages
+from django.views.generic import ListView  # ListView 임포트 추가
 
 # 로거 설정
 logger = logging.getLogger(__name__)
@@ -23,3 +24,13 @@ def create_rental(request):
 def rental_confirmation(request, pk):
     rental = get_object_or_404(Rental, pk=pk)  # 대여 정보 가져오기
     return render(request, 'rental/rental_confirmation.html', {'rental': rental})  # 확인 템플릿 렌더링
+
+class RentalListView(ListView):
+    model = Rental
+    template_name = 'rental_list.html'  # 사용할 템플릿 파일
+    context_object_name = 'rentals'
+
+def mark_as_returned(request, rental_id):
+    rental = get_object_or_404(Rental, id=rental_id)
+    rental.delete()  # 대여 항목 삭제 (반납으로 표시)
+    return redirect('rental-list')  # 대여 목록 페이지로 리다이렉트
