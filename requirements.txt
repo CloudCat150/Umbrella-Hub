@@ -1,15 +1,6 @@
-<<<<<<< HEAD
 asgiref==3.8.1
 Django==5.1.2
 gunicorn==23.0.0
 packaging==24.1
 sqlparse==0.5.1
 tzdata==2024.2
-=======
-asgiref==3.8.1
-Django==5.1.2
-gunicorn==23.0.0
-packaging==24.1
-sqlparse==0.5.1
-tzdata==2024.2
->>>>>>> df22d01f44b6a0d5ae4759db72bc4f1fe9e7c1fd
