@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RentalForm
 from .models import Rental
 from django.contrib import messages
-from django.views.generic import ListView  # ListView 임포트 추가
+from django.views.generic import ListView
 
 # 로거 설정
 logger = logging.getLogger(__name__)

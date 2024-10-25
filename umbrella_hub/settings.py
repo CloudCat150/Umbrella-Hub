@@ -113,7 +113,7 @@ LOGGING = {
             'handlers': ['console'],
             'level': 'INFO',
         },
-        '__main__': {  # 현재 모듈 이름으로 로거 설정
+        '__main__': {
             'handlers': ['console'],
             'level': 'INFO',
             'propagate': False,
@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # 프로젝트 폴더 내에 static 폴더가 있어야 함
+    BASE_DIR / "static",
 ]
 
 # Internationalization
