@@ -122,7 +122,8 @@ LOGGING = {
 }
 
 STATIC_URL = '/static/'
-
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # 프로젝트 폴더 내에 static 폴더가 있어야 함
 ]
