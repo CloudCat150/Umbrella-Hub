@@ -27,10 +27,11 @@ def rental_confirmation(request, pk):
 
 class RentalListView(ListView):
     model = Rental
-    template_name = 'rental_list.html'  # 사용할 템플릿 파일
+    template_name = 'rental/rental_list.html'  # 사용할 템플릿 파일
     context_object_name = 'rentals'
 
 def mark_as_returned(request, rental_id):
     rental = get_object_or_404(Rental, id=rental_id)
     rental.delete()  # 대여 항목 삭제 (반납으로 표시)
+    messages.success(request, '대여가 반납되었습니다!')
     return redirect('rental-list')  # 대여 목록 페이지로 리다이렉트
